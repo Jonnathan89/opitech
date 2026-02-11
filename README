@@ -19,6 +19,7 @@ Este proyecto es un **microservicio en Java con Spring Boot**, que expone una AP
 1. Copiar el proyecto a una de sus carpetas .
 2. Ejecutar con Maven:
    
+   realizar mvn clone : url del proyecto.
    mvn clean install (Al momento de realizar este procedimiento , se ejecutaran los test del controller [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.482 s -- in com.opitech.com.HeroeControllerTest)
    mvn spring-boot:run (La aplicacion se desplegara en http://localhost:8090)
    
