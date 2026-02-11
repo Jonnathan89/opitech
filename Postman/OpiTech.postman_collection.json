@@ -1,0 +1,164 @@
+{
+  "info": {
+    "_postman_id": "d16d3182-98a6-481e-aade-c89fce6f82b5",
+    "name": "OpiTech",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "48043932"
+  },
+  "item": [
+    {
+      "name": "Get All Heroes",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8090/api/v1/heroes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8090",
+          "path": [
+            "api",
+            "v1",
+            "heroes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "create heroe",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Peter Parker\",\r\n  \"nickName\": \"Spider-Man\",\r\n  \"universe\": \"MARVEL\",\r\n  \"powerLevel\": 85\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8090/api/v1/heroes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8090",
+          "path": [
+            "api",
+            "v1",
+            "heroes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Heroe By Id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8090/api/v1/heroes/4",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8090",
+          "path": [
+            "api",
+            "v1",
+            "heroes",
+            "4"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Hero By Names",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8090/api/v1/heroes/search?name=Perez",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8090",
+          "path": [
+            "api",
+            "v1",
+            "heroes",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "Perez"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Hero",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8090/api/v1/heroes/4",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8090",
+          "path": [
+            "api",
+            "v1",
+            "heroes",
+            "4"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Hero",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Peter\",\r\n  \"nickName\": \"Spider-Man2\",\r\n  \"universe\": \"MARVEL\",\r\n  \"powerLevel\": 99,\r\n  \"createdAt\": \"2026-02-11\",\r\n  \"active\": true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8090/api/v1/heroes/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8090",
+          "path": [
+            "api",
+            "v1",
+            "heroes",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

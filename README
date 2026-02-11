@@ -1,0 +1,106 @@
+#  Demo Microservicio de Heroes
+
+Este proyecto es un **microservicio en Java con Spring Boot**, que expone una API REST para el consumo de heroes.
+
+## 🚀 Endpoints principales
+
+| Método | Endpoint                      | Descripción                   |
+|--------|-------------------------------|-------------------------------|
+| GET    | /api/v1/heroes/{id}           | Obtener un héroe por ID       |
+| GET    | /api/v1/heroes                | Listar todos los héroes       |
+| POST   | /api/v1/heroes                | Crear un nuevo héroe          |
+| PUT    | /api/v1/heroes/{id}           | Actualizar un héroe existente |
+|DELETE  | /api/v1/heroes/{id}           | Eliminar un héroe por ID      |
+|        |                               |                               |
+|        |                               |                               |
+
+## 🛠️ Configuración
+
+1. Copiar el proyecto a una de sus carpetas .
+2. Ejecutar con Maven:
+   
+   mvn clean install (Al momento de realizar este procedimiento , se ejecutaran los test del controller [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.482 s -- in com.opitech.com.HeroeControllerTest)
+   mvn spring-boot:run (La aplicacion se desplegara en http://localhost:8090)
+   
+## 🛠️ Informacion
+ 
+- DTOs: son el único modelo de datos, ya que no existe una base de datos ni entidades persistentes.
+
+- Service Layer: centraliza la lógica de negocio y la manipulación de datos provenientes del JSON.
+
+- Repository: en lugar de conectarse a una BD relacional con JPA, se implementa un repositorio basado en lectura de archivos JSON.
+
+- Fuente de datos: JSON local que se encuenta ubicado en la carpeta data.
+
+- Patrón de capas: se conserva el flujo Controller → Service → Repository → JSON, manteniendo separación de responsabilidades.
+   
+                ┌────────────────────┐
+                │   Client / API     │
+                │   (Postman, UI)    │
+                └─────────┬──────────┘
+                          │  HTTP/JSON
+                          ▼
+                ┌────────────────────┐
+                │   Controller       │
+                │ (REST Endpoints)   │
+                └─────────┬──────────┘
+                          │
+                          ▼
+                ┌────────────────────┐
+                │     Service        │
+                │ (Business Logic)   │
+                └─────────┬──────────┘
+                          │
+                          ▼
+                ┌────────────────────┐
+                │    Repository      │
+                │                    │
+                └────────────────────┘
+				          │
+                          ▼
+                ┌────────────────────┐
+                │         H2         │
+                │                    │
+                └────────────────────┘
+				
+				
+				
+                
+                
+    Pruebas → Documentacion  ayuda a validar que la documentación coincide con el comportamiento real de la API.
+            → Se realizan pruebas unitarias para con junit y mockito
+                
+               
+   Datos Adicionales :
+   
+     url documentacion: http://localhost:8090/api/v1/swagger-ui/swagger-ui/index.html#/
+                        
+     url servicios :   En el proyecto existe un carpeta que se llama Postman donde se encuentra la collection con los endpoints para importar.
+                        
+                        
+  ## ⚙️ Pila Tecnológica – Backend
+
+El backend de este proyecto está desarrollado en **Java** con **Spring Boot**, utilizando un enfoque ligero y portable.
+
+| Componente                | Tecnología / Versión         | Descripción                                                                 |
+|----------------------------|------------------------------|-----------------------------------------------------------------------------|
+| Lenguaje                  | Java 17                       | Lenguaje principal del backend.                                             |
+| Framework                  | Spring Boot 2.7.18           | Framework base para microservicios y APIs REST.                             |
+| Servidor embebido          | Tomcat (incluido en Spring)  | Manejo de peticiones HTTP sin configuración extra.                          |
+| API REST                   | spring-boot-starter-web      | Controladores, endpoints y serialización JSON (Jackson).                    |
+| Validación                 | spring-boot-starter-validation | Validación de DTOs con anotaciones (`@NotNull`, `@Size`, etc.).            |
+| Documentación API           | Springdoc OpenAPI (Swagger UI 1.7.0) | Documentación interactiva en `/swagger-ui.html`.                      |
+| Utilidades                 | Lombok 1.18.32               | Eliminación de boilerplate (getters, setters, constructores, etc.).         |
+| Fuente de datos            | JSON local                   | Se consume un archivo JSON como base de datos.                              |
+| Testing                    | spring-boot-starter-test     | Pruebas unitarias e integración con JUnit, Mockito, AssertJ.                |
+| Desarrollo                 | spring-boot-devtools         | Hot reload y soporte para acelerar el ciclo de desarrollo.                  |
+| Compilación y Build        | Maven                        | Gestión de dependencias, empaquetado y plugins de compilación.              |
+| Plugins principales        | maven-compiler-plugin, maven-surefire-plugin, spring-boot-maven-plugin | Configuración de compilación, pruebas y ejecución del microservicio. |
+
+### 🛠️ Características Clave
+- **Arquitectura ligera**: Base de datos h2  
+- **Portable y escalable**: puede ejecutarse localmente o dentro de contenedores Docker.  
+- **Documentado**: Swagger facilita la exploración y prueba de endpoints.  
+- **Productivo**: Devtools + Lombok reducen tiempos de desarrollo.                                                      
+                
+ 
